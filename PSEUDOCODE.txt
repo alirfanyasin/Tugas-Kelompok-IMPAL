@@ -1,0 +1,17 @@
+START
+Function requestProvider(operatorCode, customerInput):
+	IF customerInput != operatorCode THEN
+		RETURN "text red"
+	ENDIF
+	SET currentValue = customerInput
+	chosenMenu = operatorMenu()
+	IF chosenMenu NOT IN listMenu THEN
+		RETURN "Pilihan tidak ada"
+	ENDIF
+	noHp = inputNoHp()
+	IF noHp NOT MATCH noHpFormat THEN
+		RETURN "text red"
+	ENDIF
+	RETURN "Berhasil"
+END FUNCTION
+STOP
